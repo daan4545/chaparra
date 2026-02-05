@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Para mi Pulga ❤️</title>
+
+<style>
+body {
+  margin: 0;
+  font-family: 'Georgia', serif;
+  background: linear-gradient(135deg, #ff758c, #ff7eb3);
+  color: white;
+  text-align: center;
+  overflow-x: hidden;
+}
+
+.fade {
+  animation: fadeIn 2s ease;
+}
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+h1 {
+  margin-top: 40px;
+  font-size: 3em;
+}
+
+.card {
+  background: rgba(255,255,255,0.22);
+  padding: 30px;
+  border-radius: 25px;
+  margin: 30px auto;
+  width: 85%;
+  max-width: 800px;
+  backdrop-filter: blur(10px);
+}
+
+button {
+  background: white;
+  color: #ff4d6d;
+  border: none;
+  padding: 15px 30px;
+  border-radius: 30px;
+  font-size: 1.1em;
+  cursor: pointer;
+  transition: 0.3s;
+}
+button:hover {
+  transform: scale(1.1);
+}
+
+.heart {
+  position: fixed;
+  bottom: -10px;
+  font-size: 20px;
+  animation: flotar 6s linear infinite;
+  color: rgba(255,255,255,0.8);
+}
+@keyframes flotar {
+  from { transform: translateY(0); opacity: 1; }
+  to { transform: translateY(-100vh); opacity: 0; }
+}
+
+.gallery img {
+  width: 200px;
+  border-radius: 15px;
+  margin: 10px;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+}
+
+.letter {
+  font-size: 1.2em;
+  line-height: 1.8;
+}
+
+#contador {
+  font-size: 1.4em;
+  margin-top: 10px;
+}
+</style>
+</head>
+
+<body class="fade">
+
+<h1>Para ti, mi Pulga 🐜❤️</h1>
+
+<div class="card">
+  <p>
+   Te conoci un 11 de enero y sin pensar que 3 años despues compartiria mi vida contigo y mucho menos en pensar que un 27 de marzo iniciaria esta gran vida y que meeses despues te pediria ser novios y ahora oficialmente 5 meses a tu lado que siempre se han sentido como mas , gracias por cada momento a tu lado corazon y por cada experiencia juntos , siempre haces mis dias los mejores y talvez ya sabes todo lo que tengo por decir , porque siempre te lo eh repetido , pero no hay sentimiento mas real que el sentirme orgulloso , admirarte y ver la increile mujer que eres , porque cada dia lo demuestras y es algo que me enamora a cada instante.
+  </p>
+</div>
+
+<div class="card">
+  <h2>Nuestra historia 💑</h2>
+  <p>
+    Chaparra , te adoro con mi alma, con cada parte de mi y usted ya tiene mi corazon entero , gracias por todo y recuerda mi vida que te amo , pero amo mas las cositas que te hacen especial
+  </p>
+</div>
+
+<div class="card">
+  <h2>Nuestro tiempo juntos ⏳</h2>
+  <p id="contador"></p>
+</div>
+
+<div class="card">
+  <h2>Un mensaje para ti 💌</h2>
+  <button onclick="mostrarCarta()">Leer despacio</button>
+  <p id="carta" class="letter" style="display:none;">
+    Se que no siempre es facil ,pero gracias por cada dia escogerme , por cada dia estar a mi lado y por siempre amarme pulga , eres la mejor novia del universo y sigue siendo la mujer que eres , llena de metas , sueños y amor para dar , eres esa luz que guia mi camino y la persona con la que quiero pasar el resto de mi vida chaparra}
+TE AMO❤️ 
+    <br><br>
+    Gracias por todo este tiempo , y sigue hechandole todas las ganas a tu futuro que quiero verla convertirse en la mejor maestra del mundo , aunque yo se que ya lo eres.
+    <br><br>
+    Te adoro, Pulga. ❤️
+  </p>
+</div>
+
+<div class="card">
+  <h2>Nuestros recuerdos 📸</h2>
+  <div class="gallery">
+    <!-- <img src="foto1.jpg"> 
+    <!-- <img src="foto2.jpg"> 
+  </div>
+  <p>Momentos simples, pero nuestros 💕</p>
+</div>
+
+<div class="card">
+  <h2>🎵 Nuestra canción</h2>
+  <iframe width="300" height="170"
+    src="https://www.youtube.com/watch?v=z9iqCJzlXa4"
+    allowfullscreen>
+  </iframe>
+</div>
+
+<footer style="margin:40px;">
+  Con amor, <strong>Daniel</strong> ❤️
+</footer>
+
+<script>
+function mostrarCarta() {
+  document.getElementById("carta").style.display = "block";
+}
+
+function crearCorazon() {
+  const heart = document.createElement("div");
+  heart.className = "heart";
+  heart.innerHTML = "❤️";
+  heart.style.left = Math.random() * 100 + "vw";
+  heart.style.animationDuration = (Math.random() * 3 + 4) + "s";
+  document.body.appendChild(heart);
+  setTimeout(() => heart.remove(), 6000);
+}
+setInterval(crearCorazon, 400);
+
+const fechaInicio = new Date("2025-09-14");
+setInterval(() => {
+  const ahora = new Date();
+  const diff = ahora - fechaInicio;
+  const dias = Math.floor(diff / (1000 * 60 * 60 * 24));
+  document.getElementById("contador").innerText =
+    `Llevamos ${dias} días caminando juntos ❤️`;
+}, 1000);
+</script>
+
+</body>
+</html>
